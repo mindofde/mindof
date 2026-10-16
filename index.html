@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MINDOFDE — AI for Revit</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'], mono: ['ui-monospace','SFMono-Regular','Menlo','monospace'] },
+  keyframes: { floaty: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+               blink: { '50%': { opacity: 0 } } },
+  animation: { floaty: 'floaty 7s ease-in-out infinite', blink: 'blink 1s steps(1) infinite' }
+}}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#050b18] text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-cyan-400/30" style="padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)">
+
+<!-- Background: grid, top glow, blur spots -->
+<div class="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true">
+  <div class="absolute inset-0 opacity-[0.35]" style="background-image:linear-gradient(rgba(56,189,248,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.08) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse at top,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse at top,#000 30%,transparent 75%)"></div>
+  <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] max-w-[140vw] h-[420px] bg-cyan-400/20 blur-[140px] rounded-full"></div>
+  <div class="absolute top-[40%] -left-40 w-96 h-96 bg-blue-600/20 blur-[120px] rounded-full animate-floaty"></div>
+  <div class="absolute top-[65%] -right-40 w-96 h-96 bg-cyan-500/15 blur-[120px] rounded-full animate-floaty"></div>
+</div>
+
+<!-- Header -->
+<header class="absolute top-0 inset-x-0 z-20" style="padding-top:env(safe-area-inset-top,0px)">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#top" class="text-xl font-black tracking-tight text-white">MIND<span class="text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,.9)]">[OF]</span>DE</a>
+    <nav class="flex items-center gap-6 sm:gap-8 text-sm font-medium text-slate-400">
+      <a href="#technology" class="hover:text-cyan-300 transition-colors duration-200">Technology</a>
+      <a href="#features" class="hover:text-cyan-300 transition-colors duration-200">Features</a>
+      <a href="#security" class="hover:text-cyan-300 transition-colors duration-200">Security</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- Hero -->
+<section class="relative pt-36 sm:pt-44 pb-24 px-5 text-center">
+  <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-sm font-medium text-cyan-300 animate-pulse">
+    <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75 animate-ping"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"></span></span>
+    Next-Gen BIM Integration
+  </div>
+  <h1 class="mt-8 text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.02] drop-shadow-[0_0_35px_rgba(34,211,238,.45)]">AI Meets<br>Architecture.</h1>
+  <p class="mt-8 max-w-2xl mx-auto text-lg sm:text-xl text-slate-300 leading-relaxed">MINDOFDE is the bridge between large language models and Autodesk Revit. Ask in plain English, and the model reads your project, reasons over its data, and acts through the Revit API — directly inside your BIM workflow.</p>
+  <a href="#technology" class="group mt-10 inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 font-bold text-slate-950 shadow-[0_0_40px_rgba(34,211,238,.45)] transition duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(34,211,238,.7)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+    Explore the Technology
+    <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+  </a>
+</section>
+
+<!-- Features -->
+<section id="technology" class="px-5 py-20">
+  <div class="max-w-6xl mx-auto">
+    <div id="features" class="max-w-2xl">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Built on the stack architects already use</h2>
+      <p class="mt-4 text-slate-400 text-lg">Native Revit tooling on one side, a frontier model on the other, and automation that connects them.</p>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      <article class="group rounded-2xl border border-slate-700/60 bg-slate-900/60 p-7 backdrop-blur transition duration-300 hover:scale-[1.03] hover:border-cyan-400/50 hover:shadow-[0_0_40px_rgba(34,211,238,.15)]">
+        <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/30 transition group-hover:bg-cyan-400/20">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m8 8-5 4 5 4m8-8 5 4-5 4m-3-11-2 14"/></svg>
+        </div>
+        <h3 class="mt-6 text-xl font-bold text-white">Native C# &amp; pyRevit Integration</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">A compiled C# add-in and pyRevit scripts talk to the Revit API directly. Elements, parameters, views and sheets stay in sync with Autodesk Revit — no exports, no copy-paste.</p>
+      </article>
+      <article class="group rounded-2xl border border-slate-700/60 bg-slate-900/60 p-7 backdrop-blur transition duration-300 hover:scale-[1.03] hover:border-cyan-400/50 hover:shadow-[0_0_40px_rgba(34,211,238,.15)]">
+        <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-500/10 text-blue-300 ring-1 ring-blue-400/30 transition group-hover:bg-blue-500/20">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.5"/></svg>
+        </div>
+        <h3 class="mt-6 text-xl font-bold text-white">Gemini API Powered</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">Hold architectural dialogs about your model, analyze element data at scale, and get generative assistance for schedules, notes and design options — grounded in your actual project.</p>
+      </article>
+      <article class="group rounded-2xl border border-slate-700/60 bg-slate-900/60 p-7 backdrop-blur transition duration-300 hover:scale-[1.03] hover:border-cyan-400/50 hover:shadow-[0_0_40px_rgba(34,211,238,.15)]">
+        <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/30 transition group-hover:bg-cyan-400/20">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.5 11 14.5 15 10M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+        </div>
+        <h3 class="mt-6 text-xl font-bold text-white">Workflow Automation</h3>
+        <p class="mt-3 text-slate-400 leading-relaxed">Cut routine labor: set view scales, generate foundation plans and check drawings against office standards in a single command, then review the results.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive demo -->
+<section class="px-5 py-20">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">See the assistant work inside Revit</h2>
+      <p class="mt-4 text-slate-400 text-lg">Pick a prompt. The assistant answers and the model view updates.</p>
+    </div>
+    <div class="mt-10 rounded-2xl border border-slate-700/70 bg-slate-950/80 shadow-[0_0_80px_rgba(34,211,238,.12)] overflow-hidden">
+      <div class="flex items-center gap-2 border-b border-slate-800 bg-slate-900/80 px-4 py-2.5">
+        <span class="h-3 w-3 rounded-full bg-rose-400/80"></span><span class="h-3 w-3 rounded-full bg-amber-300/80"></span><span class="h-3 w-3 rounded-full bg-emerald-400/80"></span>
+        <span class="ml-3 text-xs text-slate-500 truncate">Autodesk Revit — Residential_Block_A.rvt — Level 1</span>
+      </div>
+      <div class="grid lg:grid-cols-[1fr_360px]">
+        <!-- Model view -->
+        <div class="relative border-b lg:border-b-0 lg:border-r border-slate-800 p-4">
+          <div class="mb-3 flex flex-wrap gap-2 text-xs text-slate-500">
+            <span class="rounded bg-slate-800/80 px-2 py-1">View: Level 1 Plan</span>
+            <span id="scaleTag" class="rounded bg-slate-800/80 px-2 py-1 transition-colors">Scale: 1:100</span>
+            <span id="statusTag" class="rounded bg-slate-800/80 px-2 py-1 transition-colors">Ready</span>
+          </div>
+          <svg viewBox="0 0 520 330" class="w-full h-auto rounded-lg bg-[#07101f]" role="img" aria-label="Simplified Revit floor plan with column grid">
+            <g stroke="#1e3a5f" stroke-width="1" stroke-dasharray="4 4">
+              <line x1="60" y1="20" x2="60" y2="310"/><line x1="200" y1="20" x2="200" y2="310"/><line x1="340" y1="20" x2="340" y2="310"/><line x1="480" y1="20" x2="480" y2="310"/>
+              <line x1="30" y1="60" x2="500" y2="60"/><line x1="30" y1="170" x2="500" y2="170"/><line x1="30" y1="280" x2="500" y2="280"/>
+            </g>
+            <rect x="60" y="60" width="420" height="220" fill="none" stroke="#64748b" stroke-width="4"/>
+            <line x1="200" y1="60" x2="200" y2="170" stroke="#64748b" stroke-width="2"/><line x1="200" y1="170" x2="340" y2="170" stroke="#64748b" stroke-width="2"/><line x1="340" y1="170" x2="340" y2="280" stroke="#64748b" stroke-width="2"/>
+            <g id="footings" class="opacity-0 transition-opacity duration-700" fill="rgba(34,211,238,.12)" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="5 3">
+              <rect x="40" y="40" width="40" height="40"/><rect x="180" y="40" width="40" height="40"/><rect x="320" y="40" width="40" height="40"/><rect x="460" y="40" width="40" height="40"/>
+              <rect x="40" y="150" width="40" height="40"/><rect x="180" y="150" width="40" height="40"/><rect x="320" y="150" width="40" height="40"/><rect x="460" y="150" width="40" height="40"/>
+              <rect x="40" y="260" width="40" height="40"/><rect x="180" y="260" width="40" height="40"/><rect x="320" y="260" width="40" height="40"/><rect x="460" y="260" width="40" height="40"/>
+            </g>
+            <g id="cols" fill="#94a3b8" class="transition-colors duration-500">
+              <rect x="54" y="54" width="12" height="12"/><rect x="194" y="54" width="12" height="12"/><rect x="334" y="54" width="12" height="12"/><rect x="474" y="54" width="12" height="12"/>
+              <rect x="54" y="164" width="12" height="12"/><rect x="194" y="164" width="12" height="12"/><rect id="colBad" x="334" y="164" width="12" height="12"/><rect x="474" y="164" width="12" height="12"/>
+              <rect x="54" y="274" width="12" height="12"/><rect x="194" y="274" width="12" height="12"/><rect x="334" y="274" width="12" height="12"/><rect x="474" y="274" width="12" height="12"/>
+            </g>
+            <circle id="flag" cx="340" cy="170" r="22" fill="none" stroke="#fb7185" stroke-width="2" class="opacity-0 transition-opacity duration-500"/>
+            <g fill="#475569" font-size="10" text-anchor="middle"><text x="60" y="14">A</text><text x="200" y="14">B</text><text x="340" y="14">C</text><text x="480" y="14">D</text></g>
+          </svg>
+        </div>
+        <!-- AI panel -->
+        <div class="flex flex-col bg-slate-900/60">
+          <div class="flex items-center gap-2 border-b border-slate-800 px-4 py-3 text-sm font-semibold text-white">
+            <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span> MINDOFDE Assistant
+          </div>
+          <div id="chat" class="flex-1 min-h-[210px] max-h-[260px] overflow-y-auto space-y-3 p-4 text-sm" aria-live="polite">
+            <div class="max-w-[90%] rounded-xl rounded-tl-sm bg-slate-800/80 px-3 py-2 text-slate-300">Connected to Level 1. What should we do with this model?</div>
+          </div>
+          <div class="border-t border-slate-800 p-3 flex flex-wrap gap-2">
+            <button data-k="scale" class="chip rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1.5 text-xs font-medium text-cyan-200 transition duration-200 hover:scale-105 hover:bg-cyan-400/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Set all plan scales to 1:50</button>
+            <button data-k="found" class="chip rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1.5 text-xs font-medium text-cyan-200 transition duration-200 hover:scale-105 hover:bg-cyan-400/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Draft a foundation plan</button>
+            <button data-k="check" class="chip rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1.5 text-xs font-medium text-cyan-200 transition duration-200 hover:scale-105 hover:bg-cyan-400/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Check columns against standards</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Security -->
+<section id="security" class="px-5 py-20">
+  <div class="max-w-4xl mx-auto rounded-2xl border border-slate-700/60 bg-slate-900/50 p-8 sm:p-10 text-center transition duration-300 hover:border-cyan-400/40">
+    <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/30">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6zm-3 9 2 2 4-4"/></svg>
+    </div>
+    <h2 class="mt-6 text-3xl font-extrabold text-white">Your model stays in your control</h2>
+    <p class="mt-4 max-w-2xl mx-auto text-slate-400 text-lg leading-relaxed">Every change runs inside a Revit transaction you can review and undo. The assistant works only with the project you open and shows what it plans to do before it writes to the model.</p>
+  </div>
+</section>
+</main>
+
+<footer class="border-t border-slate-800/80 px-5 py-10 text-center">
+  <div class="text-lg font-black tracking-tight text-white">MIND<span class="text-cyan-400">[OF]</span>DE</div>
+  <p class="mt-2 text-sm text-slate-500">© 2026 Mindofde. Developing the Future.</p>
+</footer>
+
+<script>
+(function () {
+  var chat = document.getElementById('chat'), busy = false;
+  var $ = function (id) { return document.getElementById(id); };
+  var reset = function () {
+    $('footings').classList.add('opacity-0');
+    $('flag').classList.add('opacity-0');
+    $('colBad').setAttribute('fill', '#94a3b8');
+    $('statusTag').className = 'rounded bg-slate-800/80 px-2 py-1 transition-colors';
+  };
+  var scenes = {
+    scale: { q: 'Set all plan scales to 1:50', a: 'Found 14 floor plan views. Setting each to 1:50 and keeping crop regions unchanged. Done.',
+      run: function () { var t = $('scaleTag'); t.textContent = 'Scale: 1:50'; t.className = 'rounded bg-cyan-400/20 text-cyan-200 px-2 py-1 transition-colors'; $('statusTag').textContent = '14 views updated'; } },
+    found: { q: 'Draft a foundation plan', a: 'Placed 12 pad footings under the column grid A–D / 1–3 and created a Foundation Plan view for review.',
+      run: function () { $('footings').classList.remove('opacity-0'); $('statusTag').textContent = '12 footings created'; $('statusTag').className = 'rounded bg-cyan-400/20 text-cyan-200 px-2 py-1 transition-colors'; } },
+    check: { q: 'Check columns against standards', a: 'Checked 12 columns. 1 issue: the column at C-2 uses a type outside the office standard. Highlighted in the view.',
+      run: function () { $('colBad').setAttribute('fill', '#fb7185'); $('flag').classList.remove('opacity-0'); $('statusTag').textContent = '1 issue found'; $('statusTag').className = 'rounded bg-rose-400/20 text-rose-200 px-2 py-1 transition-colors'; } }
+  };
+  function bubble(text, mine) {
+    var d = document.createElement('div');
+    d.className = mine ? 'ml-auto max-w-[90%] rounded-xl rounded-tr-sm bg-cyan-400/15 px-3 py-2 text-cyan-100' : 'max-w-[90%] rounded-xl rounded-tl-sm bg-slate-800/80 px-3 py-2 text-slate-300';
+    d.textContent = text; chat.appendChild(d); chat.scrollTop = chat.scrollHeight; return d;
+  }
+  document.querySelectorAll('.chip').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (busy) return; busy = true;
+      var s = scenes[b.dataset.k]; reset(); bubble(s.q, true);
+      var d = bubble('', false), dots = document.createElement('span');
+      dots.className = 'text-cyan-300 animate-pulse'; dots.textContent = 'Thinking…'; d.appendChild(dots);
+      setTimeout(function () {
+        d.textContent = ''; var i = 0;
+        (function type() {
+          d.textContent = s.a.slice(0, ++i); chat.scrollTop = chat.scrollHeight;
+          if (i < s.a.length) setTimeout(type, 14); else { s.run(); busy = false; }
+        })();
+      }, 700);
+    });
+  });
+})();
+</script>
+</body>
+</html>
